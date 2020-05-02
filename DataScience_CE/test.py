@@ -2,11 +2,14 @@ import pandas as pd
 from sklearn import cross_validation
 from sklearn.naive_bayes import GaussianNB
 
-from sklearn import metrics
+#from sklearn.metrics import accuracy_score
 
 dataset = "dataset.csv"
 datasetHandler = open(dataset, "r")
 dataFile = pd.read_csv(datasetHandler, sep=",")
+print ("Dataset size: ", dataFile.shape)
+print (dataFile.isnull().any())
+
 datasetHandler.close()
 dataFile.head(5000)
 train, test = cross_validation.train_test_split(dataFile, test_size=0.3, random_state=0)
@@ -31,6 +34,7 @@ naiveBayes.fit(trainFeatures, trainLabel)
 
 testedD = pd.concat([testFeaturesNW, testLabelNW], axis=1)
 testPredict = naiveBayes.predict(testFeaturesNW)
+
 testedD["prediction"] = testPredict
 result = testPredict[0]
 print (result)
@@ -46,4 +50,4 @@ else:
 accuracy = naiveBayes.score(testFeatures,testLabel)
 print("Mean accuracy of the result: ", accuracy)
 
-print ("Accuracy  : ", metrics.accuracy_score(test,testPredict))
+#print ("Accuracy  : ", accuracy_score(testLabelNW,testPredict))
