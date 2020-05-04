@@ -1,0 +1,79 @@
+#include <Wire.h>
+#include <WiFi.h>
+#include <HTTPClient.h>
+
+
+const char* ssid = "PROLINK_PRS1140_084BD";
+const char* password =  "slts1234";
+const char *host = "13.233.13.60";
+
+void setup(){
+
+  Serial.begin(9600);
+  pinMode(27,OUTPUT);
+  pinMode(5, INPUT); // Setup for leads off detection LO +
+  pinMode(4, INPUT); // Setup for leads off detection LO -
+
+  Wire.begin();
+
+  delay(4000);   //Delay needed before calling the WiFi.begin
+
+}
+
+
+void loop() {
+
+  while (WiFi.status() != WL_CONNECTED) { //Check for the connection
+    digitalWrite(27,HIGH);
+    WifiConfig();
+    
+  }
+  digitalWrite(27,LOW);
+  HTTPClient http;    //Declare object of class HTTPClient
+
+  if((digitalRead(5) == 1)||(digitalRead(4) == 1)){
+    Serial.println('!');
+  }
+  else{
+  int pulse=analogRead(A0);
+  
+  Serial.print("pulse = ");
+  Serial.print(pulse);
+  Serial.println(""); 
+
+  String A,B,C;
+  
+  A = String(pulse);
+  B = String(moisture);
+  C = String(lux);
+ String pk="0003";
+  
+  String  postData = "AB=" + A ;
+  http.begin("http://13.233.13.60/cardiceye/EventHandler.php");              //Specify request destination
+  http.addHeader("Content-Type", "application/x-www-form-urlencoded");    //Specify content-type header
+
+  int httpCode = http.POST(postData);   //Send the request
+  String payload = http.getString();    //Get the response payload
+
+  Serial.println(httpCode);   //Print HTTP return code
+  Serial.println(payload);    //Print request response payload
+
+  http.end();  //Close connection
+  
+  delay(5000);  //Post Data at every 5 seconds
+  }
+  
+
+}
+
+void WifiConfig(){
+  
+  WiFi.begin(ssid, password); 
+ 
+  while (WiFi.status() != WL_CONNECTED) { //Check for the connection
+    delay(1000);
+    Serial.println("Connecting to WiFi..");
+  }
+ 
+  Serial.println("Connected to the WiFi network");
+  }
