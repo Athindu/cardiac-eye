@@ -1,0 +1,89 @@
+<div id="wrapper">
+    <!-- Navigation -->
+    <app-nav-bar></app-nav-bar>
+    <div id="page-wrapper">
+       <div class="container-fluid">
+          <!-- Page Heading -->
+          <div class="row">
+             <div class="col-lg-12">
+                <h1 class="page-header">
+                   Add Patient Profile
+                </h1>
+                <ol class="breadcrumb">
+                   <li>
+                      <i class="fa fa-dashboard"></i>  <a href="Home_index.html">Dashboard</a>
+                   </li>
+                </ol>
+             </div>
+          </div>
+          <!-- /.row -->
+          <br> 
+          <div>
+             <img src="assets/images/Profile.JPG" alt="Insert Your Photo here" width="200" height="200">
+             <br>
+             <input type="file">
+          </div>
+          <br>
+          <div class="row">
+             <div class="col-lg-6">
+                <form action="individualprofile.php" method="post">
+                   <div class="form-group">
+                      <label>
+                         <h4>Your Name </h4>
+                      </label>
+                      <input class="form-control" input type="text" name = "pname" required = "required" placeholder="James Kamal">  
+                   </div>
+                   <div class="form-group">
+                      <label>
+                         <h4>NIC Number </h4>
+                      </label>
+                      <input class="form-control" input type="text" name = "nic" required = "required" placeholder = "954344454v" >
+                   </div>
+                   <div class="form-group">
+                      <label>
+                         <h4>Date of Birth </h4>
+                      </label>
+                      <input class="form-control" input type="date" name = "dob" required = "required" placeholder = "">
+                   </div>
+                   <div class="form-group">
+                      <label>
+                         <h4>Telephone Number </h4>
+                      </label>
+                      <input class="form-control" input type="number" name = "tp" required = "required" placeholder = "0776545654">
+                   </div>
+                   <div class="form-group">
+                      <label>
+                         <h4>Gender </h4>
+                      </label>
+                      <input class="form-control" input type="text" name = "gender" required = "required" placeholder = "Male">
+                   </div>
+                   <div class="form-group">
+                      <label>
+                         <h4>Address </h4>
+                      </label>
+                      <input class="form-control" input type="textarea" name = "address" required = "required" placeholder = "Colombo Sri Lanka">
+                   </div>
+                   <div class="row">
+                      <div class="col-lg-12">
+                         <div class="panel panel-default">
+                            <div class="panel-heading">
+                               <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Progress Chart</h3>
+                            </div>
+                            <div class="panel-body">
+                               <div id="morris-area-chart"></div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <button type="submit" id="submit" class="btn btn-default">Save Profile</button>
+                   <button type="reset" class="btn btn-default">Cancel</button>
+                   <button type="reset" class="btn btn-default">Delete Profile</button>
+                   <!-- /.container-fluid -->
+                </form>
+             </div>
+             <!-- /#page-wrapper -->
+          </div>
+       </div>
+    </div>
+ </div>
+ <!-- /#wrapper -->

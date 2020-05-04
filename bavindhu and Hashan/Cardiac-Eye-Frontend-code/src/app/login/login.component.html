@@ -1,0 +1,113 @@
+<div id="vantajs">
+   <div class="container">
+      <!-- Codrops top bar -->
+      <div class="codrops-top">
+         <span class="right">
+         <a href=" http://tympanus.net/codrops/2012/03/27/login-and-registration-form-with-html5-and-css3/">
+         </a>
+         </span>
+         <div class="clr"></div>
+      </div>
+      <!--/ Codrops top bar -->
+      <header>
+         <!-- <h1 style="font-family: proximaNova; font-weight: bolder; color: aliceblue;">Cardiac-Eye</h1> -->
+         <img src="assets/images/logo.png" alt="Smiley face" height="200" width="150">
+      </header>
+      <section>
+         <div id="container_demo" >
+            <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+            <a class="hiddenanchor" id="toregister"></a>
+            <a class="hiddenanchor" id="tologin"></a>
+            <div id="wrapper">
+               <div id="login" class="animate form">
+                  <form action="Login\Login.php" method="post">
+                     <h1>Log in</h1>
+                     <p> 
+                        <label for="username" class="uname" data-icon="u" > Your User ID </label>
+                        <input id="username" name="username" required="required" type="text" placeholder="My User ID "/>
+                     </p>
+                     <p> 
+                        <label for="password" class="youpasswd" data-icon="p"> Your password </label>
+                        <input id="password" name="password" required="required" type="password" placeholder="Password" /> 
+                     </p>
+                     <p class="keeplogin"> 
+                        <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
+                        <label for="loginkeeping">Keep me logged in</label>
+                     </p>
+                     <p class="login button"> 
+                        <input type="submit" value="Login" Title = "Login Sucessful"/> 
+                     </p>
+                     <p class="change_link">
+                        I am a New User
+                        <a href="#toregister" class="to_register">Join Now</a>
+                     </p>
+                  </form>
+               </div>
+               <div id="register" class="animate form">
+                  <form  action="Registation\Registation_index.php" method="post">
+                     <h1> Sign up </h1>
+                     <p> 
+                        <label for="username" class="uname" data-icon="u">Enter Your User Name</label>
+                        <input id="username" name="username" required="required" type="text" placeholder="MyUserName" />
+                     </p>
+                     <p> 
+                        <label for="id" class="youmail" data-icon="e" >Enter Your User ID</label>
+                        <input id="id" name="id" required="required" type="text" placeholder="NIC Number"/> 
+                     </p>
+                     <p> 
+                        <label for="password_1" class="youpasswd" data-icon="p">Enter Your password </label>
+                        <input id="password_1" name="password_1" required="required" type="password" placeholder="Password"/>
+                     </p>
+                     <p> 
+                        <label for="password_2" class="youpasswd" data-icon="p">Enter Confirm Password</label>
+                        <input id="password_2" name="password_2" required="required" type="password" placeholder="Confirm Password"/>
+                     </p>
+                     <p class="signin button"> 
+                        <input type="submit" value="Sign up"/> 
+                     </p>
+                     <p class="change_link">  
+                        I am an Existing User
+                        <a href="#tologin" class="to_register"> LogIn </a>
+                     </p>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </section>
+   </div>
+</div>
+<!-- Site footer -->
+<footer class="site-footer">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by 
+               <a href="#">Ctrl Intelligence</a>.
+            </p>
+         </div>
+         <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+               <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+               <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+               <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+               <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</footer>
+<script>
+   VANTA.NET({
+       el: "#vantajs",
+       mouseControls: true,
+       touchControls: true,
+       minHeight: 100.00,
+       minWidth: 100.00,
+       scale: 1.00,
+       scaleMobile: 1.00,
+       color: 0xcc7575,
+       backgroundColor: 0x7f4f4f,
+       points: 7.00,
+       spacing: 19.00
+   })
+</script>
