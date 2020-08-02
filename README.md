@@ -8,6 +8,8 @@ A data science project which focuses on finding if any patient have a risk of ge
 - View history of the patient's medical records
 - Easy to track medical records
 
+- Classification using Naive Bayes 
+
 ![](DataScience_CE//dashboard.PNG)
 
 ![](DataScience_CE//input.PNG)
